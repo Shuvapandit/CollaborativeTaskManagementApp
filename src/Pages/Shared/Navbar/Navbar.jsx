@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UsersauthContext } from '../Userscontext/UsersContext';
-
 const Navbar = () => {
     const { user, logOut } = useContext(UsersauthContext);
     const handleLogOut = () => {
@@ -26,9 +25,8 @@ const Navbar = () => {
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-neutral text-neutral-content rounded-box w-52">
       <Link to='/'><li><a>Home</a></li></Link> 
-        <li><a>Item 1</a></li>
-       
-        <li><a>Item 3</a></li>
+      <Link to='/assigntasks'><li><a>Assign tasks</a></li></Link> 
+        
       </ul>
     </div>
     <Link to='/'><a className=" normal-case text-xl">CTMA</a></Link> 
@@ -37,10 +35,9 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
      <Link to='/'><li><a>Home</a></li></Link> 
-     <Link to='/'><li><a>Assign tasks</a></li></Link> 
-      
-     
-      <li><a>Item 3</a></li>
+     <Link to='/assigntasks'><li><a>Assign tasks</a></li></Link> 
+     <Link to='/usersprofile'><li><a>UsersProfile</a></li></Link> 
+   
     </ul>
   </div>
   <div className="navbar-end">

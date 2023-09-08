@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import { UsersauthContext } from '../Userscontext/UsersContext';
 
 const Login = () => {
+  
   const { signIn } = useContext(UsersauthContext);
   const loginhandle = (event) => {
     event.preventDefault();
@@ -15,6 +16,7 @@ const Login = () => {
         const loogedUser = result.user;
        
         form.reset();
+       
       })
       .catch((error) => {
         console.log(error);
@@ -77,7 +79,7 @@ const Login = () => {
               <p className=" link link-hover btn-link ">New to CTMA?Please,SignUp</p>
             </Link>
           </div>
-          
+         
         </div>
       </div>
     </div>

@@ -11,6 +11,9 @@ import Home from './Pages/Home/Home.jsx';
 import Login from './Pages/Shared/Login/Login';
 import Signup from './Pages/Shared/Signup/Signup';
 import UsersContext from './Pages/Shared/Userscontext/UsersContext';
+import PrivateRoutes from './Pages/PrivateRoutes/PrivateRoutes';
+import AssignTasks from './Pages/AssignTasks/AssignTasks';
+import UsersProfile from './Pages/Shared/UsersProfile/UsersProfile';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +32,20 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup/>,
+
+      },
+      {
+        path: "/usersprofile",
+        element: <UsersProfile/>,
+
+      },
+      {
+        path: "/assigntasks",
+        element:  (
+          <PrivateRoutes>
+          <AssignTasks/>
+          </PrivateRoutes>
+        ),
 
       }
     ]

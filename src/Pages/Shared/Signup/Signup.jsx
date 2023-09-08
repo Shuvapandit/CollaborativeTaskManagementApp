@@ -5,10 +5,12 @@ import { UsersauthContext } from '../Userscontext/UsersContext';
 const Signup = () => {
     const { user, createUser } = useContext(UsersauthContext);
   console.log(createUser); 
+   
   const signuphandle = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
+
     const email = form.email.value;
     const password = form.password.value;
     console.log(name,email,password); 
@@ -41,13 +43,26 @@ const Signup = () => {
           >
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text">User Name</span>
               </label>
               <input
               
                 type="text"
                 name="name"
-                placeholder="Enter Your Name"
+                placeholder="Enter Your User Name"
+                required
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">BIO</span>
+              </label>
+              <input
+              
+                type="text"
+                name="bio"
+                placeholder="Enter Your BIO"
                 required
                 className="input input-bordered"
               />
