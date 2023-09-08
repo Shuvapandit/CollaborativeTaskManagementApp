@@ -1,8 +1,16 @@
-# React + Vite
+#  CollaborativeTaskManagementApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Live link of our Project: https://collaborativetaskmanagem-684cf.firebaseapp.com/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# About our Project
+
+## Project Functionality.
+
+### Project Functionalites.
+
+- Use Vite React as a Library .
+- Use Tailwind and daisy Ui as a css framework for Design our website.
+- Created Context api for  Login and Signup.
+- Use firebase for login,signup auth and hosting website.
+

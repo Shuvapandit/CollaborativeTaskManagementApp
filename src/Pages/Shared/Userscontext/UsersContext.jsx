@@ -11,34 +11,16 @@ import app from "../../../firebase/firebase.config";
 import { useState } from "react";
 export const UsersauthContext = createContext(null);
 const auth = getAuth(app);
-
 const UsersContext = ({ children }) => {
   const [user, setUser] = useState(null);
+  /*  const  user={dispalyName:'Shuva'} */
   const [loading, setLoading] = useState(true);
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
-  }; 
- /*  const createUser = async (email, password, displayName) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      
-      // Update user's display name
-      await updateProfile(user, {
-        displayName: displayName,
-      });
-      
-      setUser(user);
-      setLoading(false);
-    } catch (error) {
-      // Handle error
-      console.error("Error creating user:", error);
-    }
-  }; */
+  };
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
- 
   const logOut = () => {
     return signOut(auth);
   };
@@ -59,7 +41,6 @@ const UsersContext = ({ children }) => {
     createUser,
     signIn,
     logOut,
-   
   };
   return (
     <UsersauthContext.Provider value={authInfo}>
