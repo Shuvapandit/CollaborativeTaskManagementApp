@@ -12,11 +12,11 @@ import { useState } from "react";
 export const UsersauthContext = createContext(null);
 const auth = getAuth(app);
 const UsersContext = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   /*  const  user={dispalyName:'Shuva'} */
   const [loading, setLoading] = useState(true);
-  const createUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const createUser = (email, password,name) => {
+    return createUserWithEmailAndPassword(auth, email, password,name);
   };
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
