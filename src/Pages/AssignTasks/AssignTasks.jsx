@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Task({
   title,
@@ -46,6 +46,16 @@ function AssignTasks() {
     assignedTo: "",
     status: "In Progress", // Default status
   });
+  // Define a function to save tasks to localStorage
+  const saveTasksToLocalStorage = (tasks) => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  };
+
+  // Load tasks from localStorage when the component mounts
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    setTasks(storedTasks);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -63,6 +73,8 @@ function AssignTasks() {
       assignedTo: "",
       status: "In Progress", // Reset status for the next task
     });
+    // Save tasks to localStorage after adding a new task
+    saveTasksToLocalStorage([...tasks, newTask]);
   };
 
   // Custom sorting function
@@ -81,6 +93,8 @@ function AssignTasks() {
     const updatedTasks = [...tasks];
     updatedTasks[index].status = newStatus;
     setTasks(updatedTasks);
+    // Save tasks to localStorage after updating the status
+    saveTasksToLocalStorage(updatedTasks);
   };
 
   return (
